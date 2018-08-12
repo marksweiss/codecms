@@ -10,10 +10,10 @@ class ClusterStack(StackBase):
         config_records_path = os.path.join(path, config_records_file)
         super(ClusterStack, self).__init__(Cluster(), config_records_path)
 
-    # TODO ABCMeta, put this in base class NotImplemented
     @dec_generate
     def generate(self):
         pass
+
 
 if __name__ == '__main__':
     stack = ClusterStack()
