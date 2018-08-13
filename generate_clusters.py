@@ -5,10 +5,7 @@ import os
 
 class ClusterStack(StackBase):
     def __init__(self):
-        path = os.path.dirname(os.path.realpath(__file__))
-        config_records_file = 'config_records.py'
-        config_records_path = os.path.join(path, config_records_file)
-        super(ClusterStack, self).__init__(Cluster(), config_records_path)
+        super(ClusterStack, self).__init__(Cluster(), 'config_records.py')
 
     @dec_generate
     def generate(self):

@@ -5,10 +5,11 @@ import os
 
 
 class StackBase(object):
-    def __init__(self, prototype, config_records_path):
+    def __init__(self, prototype, config_records_file_name):
         self.prototype = prototype
 
-        _, config_records_file_name = os.path.split(config_records_path)
+        path = os.path.dirname(os.path.realpath(__file__))
+        config_records_path = os.path.join(path, config_records_file_name)
         config_records_module_name = os.path.splitext(config_records_file_name)[0]
         self.config_records = imp.load_source(config_records_module_name,
                                               config_records_path)
