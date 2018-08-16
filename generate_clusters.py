@@ -1,6 +1,5 @@
 from cluster import Cluster
 from code_gen_decorators import StackBase, dec_generate
-import os
 
 
 class ClusterStack(StackBase):
