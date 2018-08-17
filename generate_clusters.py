@@ -1,10 +1,12 @@
 from cluster import Cluster
-from code_gen_decorators import StackBase, dec_generate
+from code_gen_decorators import (StackBase,
+                                 dec_generate)
 
 
 class ClusterStack(StackBase):
     def __init__(self):
-        super(ClusterStack, self).__init__(Cluster(), 'config_records.py')
+        super(ClusterStack, self).__init__(
+                Cluster(), 'config_records.py')
 
     @dec_generate
     def generate(self):
